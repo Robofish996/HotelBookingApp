@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
     }
 
     // Prepare and execute the registration
-    $register_query = "INSERT INTO customers (name, email, password, role) VALUES ('$register_username', '$register_email', '$hashed_password', 'customer')";
+    $register_query = "INSERT INTO users (name, email, password, role) VALUES ('$register_username', '$register_email', '$hashed_password', 'customer')";
 
     if (mysqli_query($connection, $register_query)) {
         // Registration successful message
