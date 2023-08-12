@@ -7,7 +7,7 @@ $username = 'Mathew';
 $password = 'mysql@123';
 $database = 'stayhub';
 
-//error message variable
+// Error message variable
 $error_message = '';
 
 // Login values
@@ -23,13 +23,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
     }
 
     // Prepare to fetch the user data based on the username
-    $query_members = "SELECT * FROM customers WHERE name = '$login_username'";
+    $query_users = "SELECT * FROM users WHERE name = '$login_username'";
+    $result_users = mysqli_query($connection, $query_users);
 
-    // Execute the query
-    $result_members = mysqli_query($connection, $query_members);
-
-    if ($result_members && mysqli_num_rows($result_members) === 1) {
-        $user = mysqli_fetch_assoc($result_members);
+    if ($result_users && mysqli_num_rows($result_users) === 1) {
+        $user = mysqli_fetch_assoc($result_users);
 
         if ($user['role'] === 'blocked') {
             // User is blocked, show an error message
@@ -43,7 +41,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
 
             // Redirect based on role
             if ($user['role'] === 'customer') {
-                header("Location: customerLanding.php");
+                header("Location: ../index.php");
+                exit();
+            } elseif ($user['role'] === 'admin') {
+                header("Location: ../admin.php");
                 exit();
             }
         } else {
@@ -52,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
         }
     } else {
         // User not found, show an error message
-        $error_message = "Invalid username. Please try again.";
+        $error_message = "Invalid username or password. Please try again.";
     }
 
     // Close the database connection
@@ -94,4 +95,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
     </div>
 </body>
 </html>
-
