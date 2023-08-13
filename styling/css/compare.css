@@ -16,7 +16,7 @@ body {
 }
 
 .logo {
-    font-size: 19px;
+    font-size: 24px;
 }
 
 .nav-links {
@@ -34,12 +34,22 @@ body {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ccc;
 }
 
 .user-buttons a {
     color: #fff;
     text-decoration: none;
     margin-left: 20px;
+    transition: color 0.3s;
+}
+
+.user-buttons a:hover {
+    color: #ccc;
 }
 
 /* Compare Page Styles */
@@ -51,28 +61,85 @@ body {
 
 .selected-hotel {
     flex: 1;
-    max-width: 50%;
+    max-width: 100%;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-right: 20px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.selected-hotel:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .selected-hotel img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     margin-bottom: 10px;
 }
+.jumbotron {
+    padding: 0; 
+    margin-bottom: 0; 
+}
+
+
+
+/* Different Views Tab Menu */
+.selected-hotel h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+/* Styling for Tab Menu and Images */
+#viewsTab {
+    margin-top: 20px;
+}
+
+.tab-content {
+    margin-top: 10px;
+}
+
+.tab-pane img {
+    max-width: 50%;
+    height: 50%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
 
 .selected-hotel h2 {
-    font-size: 24px;
+    font-size: 28px;
     margin: 0;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+    text-decoration: underline;
 }
 
 .selected-hotel p {
-    margin-top: 10px;
+    margin-top: 5px;
+    color: #666;
+}
+
+.comparison-results {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+.comparison-results h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  
+}
+
+.comparison-results p {
+    margin-top: 5px;
+ 
 }
 
 .booking-form {
@@ -82,17 +149,24 @@ body {
     border-radius: 5px;
     background-color: #f4f4f4;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.booking-form:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .booking-form h2 {
     font-size: 24px;
     margin-bottom: 10px;
+    color: #333;
 }
 
 .booking-form label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    color: #666;
 }
 
 .booking-form input {
@@ -103,10 +177,12 @@ body {
     border-radius: 5px;
 }
 
-.button {
+.button,
+.selected-hotel button[type="submit"] {
+    margin-left: 10px;
     background-color: #007bff;
     color: #fff;
-    padding: 10px 20px;
+    padding: 10px 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -114,6 +190,7 @@ body {
     transition: background-color 0.3s;
 }
 
-.button:hover {
+.button:hover,
+.selected-hotel button[type="submit"]:hover {
     background-color: #0056b3;
 }
