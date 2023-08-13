@@ -1,3 +1,29 @@
+<?php
+session_start();
+
+// Database connection
+$connection = mysqli_connect('localhost', 'Mathew', 'mysql@123', 'stayhub');
+if (!$connection) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// Fetch hotels from the hotels table
+$query_hotels = "SELECT * FROM hotels";
+$result_hotels = mysqli_query($connection, $query_hotels);
+
+// Store all hotels in session
+$all_hotels = [];
+while ($row = mysqli_fetch_assoc($result_hotels)) {
+    $all_hotels[] = $row;
+}
+
+// Store the hotels in the session
+$_SESSION['all_hotels'] = $all_hotels;
+
+// Close the database connection
+mysqli_close($connection);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
