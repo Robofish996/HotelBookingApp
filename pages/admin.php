@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <i class="fas fa-user-lock"></i>
             <h3>Block a Member</h3>
         </a>
-        <a class="tile" href="removeBook.php">
+        <a class="tile" href="removeHotel.php">
             <i class="fas fa-book"></i>
             <h3>Remove/Add a Hotel</h3>
         </a>
@@ -93,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <i class="fas fa-file-alt"></i>
             <h3>View Bookings of a User</h3>
         </a>
-        <a class="tile" href="addLibrarian.php">
+        <a class="tile" href="addAdmin.php">
             <i class="fas fa-user-plus"></i>
             <h3>Add a New Admin</h3>
         </a>
