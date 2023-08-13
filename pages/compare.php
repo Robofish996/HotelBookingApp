@@ -34,7 +34,7 @@ if (!$connection) {
         </div>
         <ul class="nav-links">
             <li><a href="../index.php">Home</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="checkBookings.php">Check Bookings</a></li>
         </ul>
         <div class="user-buttons">
             <?php

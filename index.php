@@ -19,7 +19,7 @@
     <ul class="nav-links">
         <li><a href="<?php echo isset($_SESSION['user_id']) ? './pages/home.php' : './pages/login.php'; ?>">Home</a></li>
         <li><a href="<?php echo isset($_SESSION['user_id']) ? './pages/hotels.php' : './pages/login.php'; ?>">Hotels</a></li>
-        <li><a href="<?php echo isset($_SESSION['user_id']) ? '#' : './pages/login.php'; ?>">Contact Us</a></li>
+        <li><a href="<?php echo isset($_SESSION['user_id']) ? './pages/checkBooks.php' : './pages/checkBooks.php'; ?>">Check Bookings</a></li>
     </ul>
     <div class="user-buttons">
         <?php
