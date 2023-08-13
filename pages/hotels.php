@@ -56,10 +56,8 @@
             // Add "Book Now" and "Compare" buttons
             echo '<div class="card-buttons">';
             if(isset($_SESSION['user_id'])) {
-                echo '<a class="button" href="book.php?hotel_id=' . $row['hotel_id'] . '">Book Now</a>';
                 echo '<a class="button" href="compare.php?hotel_id=' . $row['hotel_id'] . '">Compare</a>';
             } else {
-                echo '<a class="button" href="./pages/login.php">Login to Book</a>';
                 echo '<a class="button" href="./pages/login.php">Login to Compare</a>';
             }
             echo '</div>';
