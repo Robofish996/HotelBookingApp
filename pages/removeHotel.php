@@ -244,9 +244,6 @@ $allHotels = $hotelManager->getAllHotels();
         </div>
     <?php endforeach; ?>
 </div>
-
-
-    <!-- Rest of your HTML -->
 </body>
 
 </html>
