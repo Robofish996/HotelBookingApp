@@ -26,6 +26,7 @@ mysqli_close($connection);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,6 +34,7 @@ mysqli_close($connection);
     <title>Stayhub</title>
     <link rel="stylesheet" href="../styling/css/hotels.css">
 </head>
+
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
@@ -46,8 +48,8 @@ mysqli_close($connection);
         <div class="user-buttons">
             <?php
             session_start();
-            
-            if(isset($_SESSION['user_id'])) {
+
+            if (isset($_SESSION['user_id'])) {
                 echo '<a href="../pages/logout.php">Logout</a>';
             } else {
                 echo '<a href="./pages/login.php">Login</a>';
@@ -78,15 +80,17 @@ mysqli_close($connection);
             echo '<p>' . $row['overview'] . '</p>';
             echo '<p>Price per night: R' . $row['price_per_night'] . '</p>';
             echo '<p>Status: ' . $row['status'] . '</p>';
-            
-            // Add "Book Now" and "Compare" buttons
-            echo '<div class="card-buttons">';
-            if(isset($_SESSION['user_id'])) {
-                echo '<a class="button" href="compare.php?hotel_id=' . $row['hotel_id'] . '">Compare</a>';
-            } else {
-                echo '<a class="button" href="./pages/login.php">Login to Compare</a>';
+
+            // Check if the status is "Available" before displaying the "Compare" button
+            if ($row['status'] === 'Available') {
+                echo '<div class="card-buttons">';
+                if (isset($_SESSION['user_id'])) {
+                    echo '<a class="button" href="compare.php?hotel_id=' . $row['hotel_id'] . '">Compare</a>';
+                } else {
+                    echo '<a class="button" href="./pages/login.php">Login to Compare</a>';
+                }
+                echo '</div>';
             }
-            echo '</div>';
 
             echo '</div>';
         }
@@ -96,4 +100,5 @@ mysqli_close($connection);
         ?>
     </div>
 </body>
+
 </html>
