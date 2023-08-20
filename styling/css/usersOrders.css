@@ -1,77 +1,13 @@
-/*default styles*/
 body, h1, h2, h3, p, a, ul, li {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-h2{
-    text-decoration: underline;
-    margin-top: 5px;
-}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f5f5f5;
-}
-
-/* Navigation Bar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #007bff;
-    padding: 10px;
-}
-
-.logo a {
-    color: #fff;
-    font-size: 24px;
-    text-decoration: none;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-}
-
-.nav-links li {
-    margin-left: 20px;
-}
-
-.nav-links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-/* Admin Dashboard Tiles */
-.dashboard {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-.tile {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    color: #333;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.tile i {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-.tile h3 {
-    font-size: 18px;
 }
 
 /* Navigation Bar */
@@ -148,3 +84,50 @@ body {
 .user-dropdown.active .dropdown-content {
     display: block;
 }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.heading {
+    margin-bottom: 20px;
+}
+
+.top-books {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.top-books h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.top-books ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.top-books li {
+    margin-bottom: 5px;
+}
+
+.order-cards-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.order-cards-container p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+

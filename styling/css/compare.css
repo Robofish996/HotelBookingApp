@@ -1,4 +1,4 @@
-/* Global Styles */
+/* Global*/
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -52,7 +52,7 @@ body {
     color: #ccc;
 }
 
-/* Compare Page Styles */
+/* Compare Page*/
 .compare-container {
     display: flex;
     justify-content: space-between;
@@ -93,7 +93,7 @@ body {
     text-decoration: underline;
 }
 
-/* Styling for Tab Menu and Images */
+/*Tab Menu and Images */
 #viewsTab {
     margin-top: 20px;
 }

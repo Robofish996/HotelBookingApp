@@ -49,7 +49,7 @@
 .tabcontent:target {
   display: block;
 }
-/* Global Styles */
+/* Global*/
 body {
     font-family: Arial, sans-serif;
     margin: 0;
