@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $query_update_role = "UPDATE users SET role = 'blocked' WHERE id = $userID";
         mysqli_query($connection, $query_update_role);
     } elseif ($action === 'unblock') {
-        // Update user's role to member in the members table
+        // Update user's role to customer in the users table
         $query_update_role = "UPDATE users SET role = 'customer' WHERE id = $userID";
         mysqli_query($connection, $query_update_role);
     }

@@ -16,39 +16,7 @@ if (!$connection) {
 // Get the user ID from the session
 $userID = $_SESSION['user_id'];
 $userRole = $_SESSION['role'];
-
 $sessionData = $_SESSION;
-
-// Check if the form was submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get form data
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Hash the password
-
-    // Database connection
-    $connection = mysqli_connect('localhost', 'Mathew', 'mysql@123', 'crestlibrary');
-    if (!$connection) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
-
-    // Insert new librarian record
-    $query = "INSERT INTO librarians (name, email, password, role) VALUES ('$name', '$email', '$password', 'librarian')";
-    $result = mysqli_query($connection, $query);
-
-    // Check for errors
-    if (!$result) {
-        die("Query failed: " . mysqli_error($connection));
-    }
-
-    // Close the database connection
-    mysqli_close($connection);
-
-    // Show an alert message
-    echo "<script>alert('User added successfully!');</script>";
-}
-
-
 
 ?>
 

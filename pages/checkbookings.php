@@ -7,7 +7,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-// Assuming you have a database connection setup earlier in your code
+//database connection valuesq
 $host = 'localhost';
 $username = 'Mathew';
 $password = 'mysql@123';
@@ -24,7 +24,6 @@ if (!$connection) {
 $user_id = $_SESSION['user_id'];
 $query = "SELECT * FROM orders WHERE user_id = '$user_id' ORDER BY time_of_order DESC";
 $result = mysqli_query($connection, $query);
-
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +45,7 @@ $result = mysqli_query($connection, $query);
         </div>
         <ul class="nav-links">
             <li><a href="../index.php">Home</a></li>
-            <li><a href="checkBookings.php">Check Bookings</a></li>
+            <li><a href="hotels.php">View Hotels</a></li>
         </ul>
         <div class="user-buttons">
             <?php
